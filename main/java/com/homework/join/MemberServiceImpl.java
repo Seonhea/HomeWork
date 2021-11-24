@@ -17,8 +17,10 @@ public class MemberServiceImpl implements MemberService {
 		List<Member> volist = memberDAO.memberList();
 		return volist;
 }
-	public String signUp(Member member)  throws Exception {
-		String result = memberDAO.signUp(member);
-		return result;
+	public int signUp(Member vo)  throws Exception {
+		return memberDAO.signUp(vo);
 	}
+//	public int signUp(String mId, String mPwd, String mName) throws Exception {
+//		return memberDAO.signUp(mId, mPwd, mName);
+//	}
 }

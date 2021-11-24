@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
+<mapper namespace="memberMapper">
   <cache-ref namespace=""/>
   
   <resultMap type="Member" id="memberResultSet">
@@ -14,6 +14,11 @@
   select * from member;
   </select>
   <insert id="signUp" parameterType="Member">
-  insert into member values (#{memberId},#{memberPwd},#{memberNm},sysdate);
+  	insert into member values 
+  	(#{memberId},#{memberPwd},#{memberNm}, default);
+  </insert>
+  <insert id="signUp2" parameterType="Member">
+  	insert into member values 
+  	(#{mId},#{mPwd},#{mName}, default);
   </insert>
 </mapper>
